@@ -1,0 +1,124 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Pseudo elemento */
+main:after{
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(237,183,9,0.31813079235600494) 0%, rgba(0,0,0,0.015609783952643563) 49%, rgba(74,207,214,0.43857897162771353) 100%);
+    z-index: -1;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.informacoes .logo{
+    max-width: 350px;
+    margin-bottom: 80px;
+}
+
+.informacoes .descricao{
+    width: 49%;
+    font-size: 23px;
+    color: white;
+    line-height: 30px;
+    text-shadow: 0.1em 0.1em 0.2em black
+}
+
+.botoes-carrossel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botoes-carrossel .botao{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: white;
+}
+
+.botoes-carrossel .botao.selecionado{
+    background-color: #1d8346;
+}
+
+.menu-lateral{
+    position:  fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-lateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Animação de 0.3s */
+.menu-lateral .icone{
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+}
+
+/* Passar mouse por cima, vai escalar ícone */
+.menu-lateral .icone:hover{
+    transform: scale(1.2);
+}
+
+/* z-index profundidade */
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+/* A imagem vai cobrir todo tamanho da pagina sem perder qualidade */
+.carrossel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+
+.carrossel .imagem.ativa{
+    display: block;
+}
+
+/* Animação */
+@keyframes mudarImagem{
+    from{
+        opacity: 0.85;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.descricao{
+    background-color: rgba(35, 36, 36, 0.35);
+    border-radius: 10px;
+    padding: 4px;
+}
